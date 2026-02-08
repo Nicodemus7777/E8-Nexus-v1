@@ -75,6 +75,25 @@ export interface MeraState {
   bulkCurvature: number; // Emergent geometry curvature
 }
 
+export interface EvaluationLog {
+  id: string;
+  timestamp: number;
+  parameters: {
+    temp: number;
+    mera: number;
+    wick: number;
+  };
+  analysis: string;
+  stabilityScore: number;
+}
+
+export interface ParameterSweep {
+  parameter: 'temperature' | 'renormalization' | 'wick';
+  start: number;
+  end: number;
+  steps: number;
+}
+
 export interface LieGroupInfo {
   id: LieGroupType;
   name: string;
